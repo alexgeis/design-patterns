@@ -1,7 +1,11 @@
 /**
  * reference urls:
  * https://www.patterns.dev/posts/observer-pattern/
+ * https://www.sitepoint.com/javascript-design-patterns-observer-pattern/
  *
+ * Allows an object (subscriber) to watch another object (publisher).
+ * Subscriber can register/unregister to listen for even notification
+ * Enables one to many data binding between elements.
  *
  * @param none
  * @return object API containing pub/sub methods and properties
