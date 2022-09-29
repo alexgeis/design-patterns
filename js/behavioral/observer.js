@@ -25,4 +25,17 @@ const pubsub = {};
 
 		return this;
 	};
+
+	q.subscribe = function (topic, func) {
+		if (!topics[topic]) topics[topic] = [];
+
+		let token = (++subUid).toString();
+
+		topics[topic].push({
+			token: token,
+			func: func,
+		});
+
+		return token;
+	};
 })(pubsub);
