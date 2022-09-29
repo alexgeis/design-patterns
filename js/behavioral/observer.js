@@ -38,4 +38,19 @@ const pubsub = {};
 
 		return token;
 	};
+
+	q.unsubscribe = function (token) {
+		for (const m of topics) {
+			if (topics[m]) {
+				for (let i = 0; i < topics[m].length; i++) {
+					if (topics[m][i].token === token) {
+						topics[m].splice(i, 1);
+						return token;
+					}
+				}
+			}
+		}
+
+		return this;
+	};
 })(pubsub);
